@@ -46,8 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const paletteSection = document.querySelector("#palettes");
     const paletteCards = document.querySelectorAll(".palette-card");
     const message = document.getElementById("palette-message");
+    const toggleStylesButton = document.getElementById("toggle-styles");
+    const stylesSection = document.getElementById("styles");
+    const stylesContent = stylesSection.querySelector(".style-cards");
 
-    if (!paletteGrid || !addButton || !clearButton || !togglePaletteButton || !toggleThemeButton || !paletteSection || !message || paletteCards.length === 0) {
+    if (!paletteGrid || !addButton || !clearButton || !togglePaletteButton || !toggleThemeButton || !paletteSection || !message || paletteCards.length === 0 || !toggleStylesButton || !stylesSection || !stylesContent) {
         console.error("Не найдены необходимые элементы палитры.");
         return;
     }
@@ -112,6 +115,11 @@ document.addEventListener("DOMContentLoaded", function () {
             togglePaletteButton.textContent = "Показать палитру";
         }
 
+        if (localStorage.getItem("stylesHidden") === "true") {
+            stylesContent.classList.add("palette-hidden");
+            toggleStylesButton.textContent = "Показать стили";
+        }
+
         if (localStorage.getItem("designerTheme") === "dark") {
             document.body.classList.add("dark-theme");
             toggleThemeButton.textContent = "Светлая тема";
@@ -147,9 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     togglePaletteButton.addEventListener("click", function () {
-        const isHidden = paletteGrid.classList.toggle("palette-hidden");
-        togglePaletteButton.textContent = isHidden ? "Показать палитру" : "Скрыть палитру";
-        localStorage.setItem("paletteHidden", String(isHidden));
+        const isHiddenPalettes = paletteGrid.classList.toggle("palette-hidden");
+        togglePaletteButton.textContent = isHiddenPalettes ? "Показать палитру" : "Скрыть палитру";
+        localStorage.setItem("paletteHidden", String(isHiddenPalettes));
+    });
+
+    toggleStylesButton.addEventListener("click", function () {
+        const isHiddenStyles = stylesContent.classList.toggle("palette-hidden");
+        toggleStylesButton.textContent = isHiddenStyles ? "Показать стили" : "Скрыть стили";
+        localStorage.setItem("stylesHidden", String(isHiddenStyles));
     });
 
     toggleThemeButton.addEventListener("click", function () {
@@ -159,14 +173,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     restorePalette();
-});
-
-const toggleStylesButton = document.getElementById("toggle-styles");
-const stylesSection = document.getElementById("styles");
-
-toggleStylesButton.addEventListener("click", () => {
-    const content = stylesSection.querySelector(".style-cards");
-    const isHidden = content.classList.toggle("palette-hidden");
-
-    toggleStylesButton.textContent = isHidden ? "Показать стили" : "Скрыть стили";
 });
