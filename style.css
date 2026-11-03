@@ -24,7 +24,20 @@ body.dark-theme {
     --card_color: #34313b;
     --link_color: #e5b9e8;
     --link_hover_color: #ffffff;
+    background-image: none;
+    background-color: #2b2b2b;
 }
+body.dark-theme .bg_img {
+    background-image: none;
+    background-color: #2b2b2b;
+}
+body.dark-theme header,
+body.dark-theme main > section,
+body.dark-theme main > aside, body.dark-theme .palette-card,
+body.dark-theme .style-card {
+    border-color: #444444;
+}
+
 aside { float: right; }
 .add_padding { padding-left: 35px; }
 body:has(input:focus, textarea:focus)::before {
