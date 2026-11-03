@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>О себе</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .skills-list { list-style-type: square; padding-left: 50px; }
+        .projects-list { list-style-type: upper-roman; padding-left: 50px; }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body class="bg_img">
+<header class="parallax bg_img">
+    <!-- position: static -->
+    <img src="images/pic.jpeg" alt="Изображение для страницы Антон Мирошниченко">
+    <h1>Мирошниченко Антон</h1>
+    <h1>О себе</h1>
+    <div class="add_padding">
+        <p>Студент НИ ТГУ, факультет ИПМКН, направление ПМИ, 4 курс бакалавриата</p>
+        <p>Работа - дизайнер и визуализатор</p>
+        <p><a href="https://vk.ru/antoniovay">Страница VK</a></p>
+    </div>
+</header>
+
+<nav class="site-nav" aria-label="Основная навигация">
+    <a href="#styles">Стили в дизайне</a>
+    <a href="#palettes">Палитры недели</a>
+    <a href="#skills">Навыки</a>
+    <a href="#projects">Проекты</a>
+    <a href="#contact">Обратная связь</a>
+</nav>
+
+<main>
+    <section id="styles" class="parallax bg_img">
+        <h2>Стили в дизайне</h2>
+        <div class="style-cards">
+            <article class="style-card">
+                <div class="style-preview preview-minimalism" aria-hidden="true"></div>
+                <div class="card-text"><h3>Минимализм</h3><p lang="ru">Чистые формы, свободное пространство и только необходимые элементы.</p></div>
+            </article>
+            <article class="style-card">
+                <div class="style-preview preview-modernism" aria-hidden="true"></div>
+                <div class="card-text"><h3>Модернизм</h3><p lang="ru">Функциональность, геометрия и выразительная типографика.</p></div>
+            </article>
+            <article class="style-card">
+                <div class="style-preview preview-brutalism" aria-hidden="true"></div>
+                <div class="card-text"><h3>Брутализм</h3><p lang="ru">Контрастные цвета, крупные надписи и простая композиция.</p></div>
+            </article>
+            <article class="style-card">
+                <div class="style-preview preview-scandi" aria-hidden="true"></div>
+                <div class="card-text"><h3>Скандинавский стиль</h3><p lang="ru">Мягкие оттенки, натуральные материалы и визуальная лёгкость.</p></div>
+            </article>
+        </div>
+    </section>
+
+    <section id="palettes" class="parallax bg_img">
+        <h2>Палитры недели</h2>
+        <div class="palette-grid">
+            <article class="palette-card">
+                <h3>Пастельная роза</h3>
+                <div class="swatches">
+                    <div class="swatch rose"><span>#F7DCE4</span></div><div class="swatch plum"><span>#49304F</span></div>
+                    <div class="swatch gray"><span>#343238</span></div><div class="swatch cream"><span>#FFF8F5</span></div>
+                </div>
+            </article>
+            <article class="palette-card">
+                <h3>Природная</h3>
+                <div class="swatches">
+                    <div class="swatch sage"><span>#A8B5A0</span></div><div class="swatch forest"><span>#34483B</span></div>
+                    <div class="swatch sand"><span>#E7D8BE</span></div><div class="swatch charcoal"><span>#292D2A</span></div>
+                </div>
+            </article>
+            <article class="palette-card">
+                <h3>Морская</h3>
+                <div class="swatches">
+                    <div class="swatch sky"><span>#B8DCE8</span></div><div class="swatch ocean"><span>#31566B</span></div>
+                    <div class="swatch foam"><span>#F2F7F5</span></div><div class="swatch deep"><span>#243746</span></div>
+                </div>
+            </article>
+            <article class="palette-card">
+                <h3>Закат</h3>
+                <div class="swatches">
+                    <div class="swatch peach"><span>#F4B89A</span></div><div class="swatch terracotta"><span>#A64F3C</span></div>
+                    <div class="swatch violet"><span>#51405F</span></div><div class="swatch light"><span>#FFF0DC</span></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <aside class="sidebar parallax bg_img">
+        <h2>Любимые стили дизайна</h2>
+        <ul class="skills-list"><li>Минимализм</li><li>Модернизм</li></ul>
+    </aside>
+
+    <section id="skills" class="hoverp parallax bg_img">
+        <h2>Навыки</h2>
+        <ul class="skills-list">
+            <li>Работа с цветом</li>
+            <li>Знание геометрии объектов</li>
+            <li>Работа с необходимым софтом</li>
+            <li>Понимание предпочтений человека</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="parallax bg_img">
+        <h2>Проекты</h2>
+        <ol class="projects-list">
+            <li>Логотип моего бренда</li>
+            <li>Реклама компании</li>
+            <li>Рекламная брошюра</li>
+            <li>Дизайн проект для студии</li>
+        </ol>
+    </section>
+
+    <section id="contact" style="height: 300px;" class="parallax bg_img">
+        <h2>Обратная связь</h2>
+        <div class="add_padding">
+            <form>
+                <div><label for="name">Имя</label><input id="name" name="name" type="text" placeholder="Имя"></div>
+                <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="Email"></div>
+                <div><label for="message">Сообщение</label><textarea id="message" name="message" placeholder="Сообщение"></textarea></div>
+                <div><button name="send_button" type="submit">Отправить</button></div>
+            </form>
+        </div>
+    </section>
+</main>
+<footer><p><small>© Copyright 2026 Antony</small></p></footer>
+</body>
+</html>
