@@ -160,3 +160,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     restorePalette();
 });
+
+const toggleStylesButton = document.getElementById("toggle-styles");
+const stylesSection = document.getElementById("styles");
+
+toggleStylesButton.addEventListener("click", () => {
+    const content = stylesSection.querySelector(".style-cards");
+    const isHidden = content.classList.toggle("palette-hidden");
+
+    toggleStylesButton.textContent = isHidden ? "Показать стили" : "Скрыть стили";
+});
